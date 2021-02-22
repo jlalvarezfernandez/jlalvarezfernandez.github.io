@@ -1,0 +1,483 @@
+$primary-color: #4f5b62
+$mgn5: 5px
+$pdg5: 5px
+$mgn2: 2px
+$pdg2: 2px
+$bordeRojoTop: 1px solid red 
+$bordeRojoBottom: 1px solid red 
+$colorFuente: #ffffff
+$colorFondo: red
+$textoCentradito: center
+$tamanio2: 2rem
+$tamanio3: 3rem
+$tamanio4: 4rem
+$sombraPreyectos: 0 10px 40px -10px rgb(255, 255, 255)
+$sombraTexto: black 0.1em 0.1em 0.2em
+%paddingArriBajo
+    padding-bottom: 16px
+    padding-top: 16px
+%efectoasAnimacion
+    box-shadow: $sombraPreyectos
+    border-radius: 100px
+    background: red
+    height: 15px
+    width: 0
+%parallax
+    background-position: center
+    background-repeat: no-repeat
+    background-size: 100% 100%
+    width: 100%
+    height: 300px
+    box-sizing: border-box
+%flexColumna
+    display: flex
+    flex-direction: column
+
+body
+    font-size: 16px
+    font-family: 'Roboto', sans-serif
+    background-color: $primary-color
+header
+    background-color: $primary-color
+    @extend %flexColumna
+    @extend %paddingArriBajo
+    justify-content: space-around
+    height: 100vh
+    border-top: $bordeRojoTop
+    border-bottom: $bordeRojoBottom
+    @media (min-width:650px)
+        display: flex
+        flex-direction: column
+        h1
+            font-size: 3.5rem
+        nav
+            ul
+                display: flex
+                flex-direction: row
+                justify-content: space-around
+                .enlaceMenu
+                    width: 100%
+                    &:hover
+                        border-radius: 30px
+                        color: $colorFuente
+                        background-color: black
+    .logo
+        border-radius: 100%
+        align-self: center
+        width: 10rem
+        height: 10rem
+        margin: $mgn5
+        @media (min-width:850px)
+            width: 14rem
+            height: 14rem
+        @media (min-width:1100px)
+            width: 19rem
+            height: 19rem
+    h1
+        font-size: 2.4rem
+        text-align: $textoCentradito
+        margin: $mgn5
+        padding: $pdg5
+        animation-name: miAnimacion
+        animation-duration: 2s
+        animation-iteration-count: infinite
+        text-shadow: 0.1em 0.1em 0.05em #333
+        @media (min-width:850px)
+            font-size: $tamanio4
+    nav
+        margin: $mgn2
+        padding: $pdg2
+        ul
+            text-align: $textoCentradito
+            margin: $mgn2 
+            padding: $pdg2
+            margin-bottom: 15px
+            .enlaceMenu
+                text-decoration: none
+                li
+                    color: $colorFuente
+                    list-style: none
+                    border-radius: 30px
+                    margin: $mgn5
+                    padding: 7px
+                    font-size: 1.4rem
+                    background-color: $colorFondo
+                    border: 1px solid white
+                    &:hover
+                        background-color: black  
+                        border-radius: 30px 
+                    @media (min-width:860px)
+                        font-size: $tamanio2
+@keyframes miAnimacion
+    from
+        color: white
+    to
+        color: red
+#sticky
+    position: fixed
+    bottom: 50px
+    padding: 20px
+    height: 25px
+    display: flex
+    
+#flecha
+    color: black
+    height: 40px
+    filter: invert(200%)
+main
+    background-color: $primary-color
+.parallax1
+    background-image: url(../img/parallax1.jpg)
+    @extend %parallax
+    @media (min-width:650px)
+        height: 600px
+        background-attachment: fixed
+    @media (min-width:850px)
+        height: 750px
+.sobreMi
+    @extend %flexColumna
+    border-bottom: $bordeRojoBottom
+    border-top: $bordeRojoTop
+    align-items: center
+    height: min-content
+    justify-content: space-around
+    @extend %paddingArriBajo
+    h2
+        text-align: $textoCentradito
+        font-size: $tamanio3
+        margin: $mgn5
+        color: $colorFuente
+        text-shadow: $sombraTexto
+        @media (min-width:1200px)
+            font-size: $tamanio4
+    img
+        border-radius: 100px
+        width: 9rem
+        height: 9rem
+        @media (min-width:850px)
+            width: 12rem
+            height: 12rem
+        @media (min-width:1000px)
+            width: 13rem
+            height: 13rem
+    .nombre
+        font-size: $tamanio4
+        color: $colorFuente
+        margin: $mgn5
+        text-shadow: $sombraTexto
+    .info
+        display: flex
+        column-gap: 15px
+        div
+            border: 1px solid white
+            background-color: $colorFondo
+            border-radius: 20px
+            box-shadow: 1px 1px 5px 3px black
+            margin: 15px
+            padding: 6px
+            p
+            text-align: $textoCentradito
+            *padding: $pdg2
+            font-size: 1rem
+            @media (min-width:1200px)
+                font-size: $tamanio2
+                margin: 55px
+    p
+        text-align: $textoCentradito
+        color: $colorFuente
+        font-size: 1.2rem
+        @media (min-width:1200px)
+            font-size: $tamanio2
+    .cv
+        background-color: transparent
+        border: 1px solid white
+        border-radius: 10px
+        text-decoration: none
+        align-self: center
+        text-align: $textoCentradito
+        font-size: $tamanio2
+        color: $colorFuente
+        padding: 8px
+        margin: $mgn2
+        box-shadow: black 0.1em 0.1em 0.2em
+        &:hover
+            background-color: $colorFondo
+            border: 1px solid white
+            box-shadow: black 0.1em 0.1em 0.2em
+            animation: iconosMoviles 1.5s forwards
+        @media (min-width:1200px)
+            font-size: 2.5rem
+.parallax2
+    background-image: url(../img/parallax2.jpg)
+    @extend %parallax
+    @media (min-width:650px)
+        height: 600px
+        background-attachment: fixed
+    @media (min-width:850px)
+        height: 750px
+.portfolio
+    border-bottom: $bordeRojoBottom
+    border-top: $bordeRojoTop
+    @extend %paddingArriBajo
+    h2
+        text-align: $textoCentradito
+        font-size: $tamanio3
+        color: $colorFuente
+        text-shadow: $sombraTexto
+        margin: $mgn5
+        @media (min-width:1200px)
+            font-size: $tamanio4
+    #proyectos
+        color: $colorFuente
+        text-align: $textoCentradito
+        padding: 10px
+        *margin: $mgn5
+        @media (min-width:650px)
+            display: grid
+            grid-template-columns: 1fr 1fr 
+            justify-content: center
+            align-self: center
+            margin: $mgn2
+            padding: 2px
+            column-gap: 10px
+            row-gap: 13px
+            padding-bottom: 10px
+        @media (min-width:750px)
+            grid-template-columns: 1fr 1fr 1fr
+            padding-bottom: 10px
+        .proyecto
+            border-radius: 40px
+            overflow: hidden
+            margin: $mgn5
+            display: flex
+            flex-direction: column
+            &:hover
+                box-shadow: 3px 3px 10px 4px white
+                transition-duration: 3s
+            .asignaturaTitulo
+                display: grid
+                grid-template-columns: 40% 60%
+                background-color: #da5858
+                color: $colorFuente
+                align-items: center
+                justify-items: center
+                border: 1px solid red
+                img
+                    width: 20%
+                    *filter: invert(200%)
+                    @media (min-width:1450px)
+                        width: 17%
+                        margin: 0px
+                        padding: 0px
+                h4
+                    margin: $mgn5
+                    padding: $pdg5
+                    color: black
+            .cuerpo
+                padding: $pdg5
+                height: 80%
+                border: 1px solid red
+                background-color: #486374
+                p
+                    text-align: $textoCentradito
+                    margin: 3px
+                    padding: 3px
+                    color: $colorFuente
+                    font-size: 1.3rem
+                    @media (min-width:650px)
+                        font-size: 1.1rem
+                    @media (min-width:1200px)
+                        font-size: 1.6rem
+                img
+                    margin: $mgn5
+                    padding: $pdg5
+                    width: 200px
+                    height: 200px
+                    &:hover
+                        animation: imgRotate 1.5s forwards
+                        &:hover
+                            border-radius: 15%
+                            box-shadow: 0px 0px 7px 7px #da5858
+            .enlaceGit
+                color: $colorFuente
+                background-color: #da5858
+                border: 1px solid red
+                img
+                    margin: $mgn2
+.parallax3
+    background-image: url(../img/parallax3.jpg)
+    @extend %parallax
+    @media (min-width:650px)
+        height: 600px
+        background-attachment: fixed
+    @media (min-width:850px)
+        height: 750px
+.conocimientos
+    @extend %paddingArriBajo
+    border-bottom: $bordeRojoBottom
+    border-top: $bordeRojoTop
+    @media (min-width:650px)
+        height: min-content
+    @media (min-width:850px)
+        display: flex
+        flex-direction: column
+        justify-content: center
+    h2
+        text-align: $textoCentradito
+        font-size: 2.8rem
+        margin: 1px
+        color: $colorFuente
+        text-shadow: $sombraTexto
+        @media (min-width:650px)
+            margin: 10px
+        @media (min-width:1200px)
+            font-size: $tamanio4
+    #progresion
+        color: $colorFuente
+        justify-content: center
+        padding: $pdg5
+        margin: $mgn5
+        display: flex
+        align-content: center
+        flex-flow: column
+        label
+            text-shadow: $sombraTexto
+            @media (min-width:1200px)
+            font-size: 1.3rem
+        .grafica
+            display: grid
+            grid-template-columns: 25% 60% 15%
+            column-gap: 5px
+            justify-items: center
+            margin: $mgn5
+            .progress
+                background: white
+                justify-items: flex-start
+                border-radius: 100px
+                display: flex
+                align-items: center
+                position: relative
+                height: 15px
+                width: 100%
+                .htmlCss
+                    animation: load 3s normal forwards
+                    @extend %efectoasAnimacion
+                .javaPy
+                    animation: load2 3s normal forwards
+                    @extend %efectoasAnimacion
+                .js
+                    animation: load3 3s normal forwards
+                    @extend %efectoasAnimacion
+                .php
+                    animation: load4 3s normal forwards
+                    @extend %efectoasAnimacion
+                .android
+                    animation: load5 3s normal forwards
+                    @extend %efectoasAnimacion
+                .github
+                    animation: load6 3s normal forwards
+                    @extend %efectoasAnimacion
+@keyframes load 
+    0% 
+        width: 0
+    100% 
+        width: 90%
+@keyframes load2 
+    0% 
+        width: 0
+    100% 
+        width: 70%
+@keyframes load3 
+    0% 
+        width: 0
+    100% 
+        width: 60%
+@keyframes load4
+    0% 
+        width: 0
+    100% 
+        width: 50%
+@keyframes load5 
+    0% 
+        width: 0
+    100% 
+        width: 80% 
+@keyframes load6 
+    0% 
+        width: 0
+    100% 
+        width: 100% 
+.parallax4
+    background-image: url(../img/parallax4.jpg)
+    @extend %parallax 
+    @media (min-width:650px)
+        height: 600px
+        background-attachment: fixed
+    @media (min-width:850px)
+        height: 750px
+.contacto
+    color: $colorFuente
+    text-align: $textoCentradito
+    border-top: $bordeRojoTop
+    border-bottom: $bordeRojoBottom
+    @extend %paddingArriBajo
+    @extend %flexColumna
+    h2
+        text-align: $textoCentradito
+        font-size: 3rem
+        margin: 0px
+        text-shadow: $sombraTexto
+    @media (min-width:1200px)
+        font-size: $tamanio4
+    .iconosContacto
+        margin: $mgn5
+        padding: $pdg5   
+        display: flex
+        align-items: center
+        justify-content: center 
+        flex-direction: column
+        @media (min-width:1200px)
+            flex-direction: row
+        .icono
+            margin: $mgn5
+            padding: $pdg5
+            font-size: 1.3rem  
+            text-shadow: $sombraTexto
+            &:hover
+                animation-name: miAnimacion
+                animation-duration: 7s
+                animation-iteration-count: infinite
+            @media (min-width:650px)
+                font-size: 1.8rem
+        .material-icons
+            margin: $mgn5
+            padding: $pdg5
+    img
+        filter: invert(200%)
+        height: 50px
+        width: 50px
+        margin: 10px
+        &:hover
+            animation: iconosMoviles 1.5s forwards
+@keyframes iconosMoviles 
+    from 
+        transform: rotate(0)
+    to 
+        transform: rotate(360deg)
+footer
+    background-color: $primary-color
+    color: $colorFuente
+    @extend %flexColumna
+    height: 15vh
+    justify-content: space-around
+    h4
+        animation-name: miAnimacion
+        animation-duration: 4s
+        animation-iteration-count: infinite
+        font-size: 1.5rem
+        text-align: $textoCentradito
+        align-self: center
+        text-shadow: 0.1em 0.1em 0.05em #333
+        margin: $mgn2
+        @media (min-width:650px)
+            font-size: $tamanio2
